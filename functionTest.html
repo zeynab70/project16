@@ -1,0 +1,33 @@
+<html>
+    <head></head>
+    <body>
+        <input id="input1" type="text"/>
+        <select id ="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+        </select>
+        <input id="input2" type="text"/>
+        <button id="calculator">calculator</button>
+        <p id="result"></p>
+        <script>
+            var input1 = document.getElementById("input1");
+            var input2 = document.getElementById("input2");
+            var operator = document.getElementById("operator");
+            var calculator = document.getElementById("calculator");
+            calculator.addEventListener("click",onClick);
+            var result = document.getElementById("result");
+            function onClick(){
+                if ((operator.value) === "+"){
+                    calculate("+");
+                   
+                } else if((operator.value) === "-"){
+                     calculate("-");
+                }
+            }
+            function calculate(opt){
+               result.innerHTML=eval( input1.value +opt+ input2.value);
+            //    The eval function takes a string and then returns the value of that string considered as a math operation. 
+            }
+        </script>
+    </body>
+</html>
